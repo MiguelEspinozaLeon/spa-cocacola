@@ -45,41 +45,39 @@ export default function ProductsPage(){
                         </div>
                         
                     ))}
+        <section className="mt-20" id="products-page">
+            
+            <h2 className="text-slate-500 font-semibold text-2xl flex justify-start">Products and Services</h2>
+            <div className="flex flex-row items-center justify-between">
+                <div className='text-slate-500'>
+                    <p className="">Here you can see some of our products that we sell: </p>
+                    <ul className="text-2xl ">
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                        <li>Item 4</li>
+                        <li>Item 5</li>
+                    </ul>
+                </div>
+                <div className="max-w-[1400px] h-[600px] w-full m-auto py-16 px-4 relative slider">
+                    <div style={{backgroundImage: `url(${slides[currentSlide].url})`}} className="w-full h-full rounded-2xl bg-center bg-cover duration-500 ease-in"></div>
+
+                    <div className="hidden absolute slider-hover:block top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer" onClick={prevSlide}>
+                        <BsChevronCompactLeft size={30}/>
+                    </div>
+                    <div className="hidden absolute slider-hover:block top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer" onClick={nextSlide}>
+                        <BsChevronCompactRight size={30}/>
+                    </div>
+                    <div className="flex top-4 justify-center py-2">
+                        {slides.map((slide, index) => (
+                            <div key={index} className={`cursor-pointer text-2xl ${currentSlide == index ? 'text-sky-600' : '' } `} onClick={()=>setCurrentSlide(index)}>
+                                <RxDotFilled />
+                            </div>
+                            
+                        ))}
+                    </div>
                 </div>
             </div>
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            {/* <div className=" container w-100 flex flex-col items-center">
-                <ul className="flex flex-row items-center gap-4">
-                    
-                    {products.map((product)=>(  
-                        <div className="w-[350px] rounded-sm shadow-lg">
-                            <li key={product.id}>
-                                <img src='https://placehold.co/600x400' className="h-50" alt="" />
-                                <h3 className="text-xl">{product.name}</h3>
-                                <p className="text-lg">{product.description}</p>
-                                <div className="rounded-full bg-green-700 w-1/2 ">
-                                    <p className="text-white text-xl font-bold p-2">${product.price}</p>
-                                </div>
-                            </li>
-                        </div> 
-                    ))}
-                </ul>                
-                    </div> */}
 
         </section>
     )

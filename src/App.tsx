@@ -5,50 +5,38 @@ import AboutPage from './sections/AboutPage'
 import ContactPage from './sections/ContactPage'
 import ProductsPage from './sections/ProductsPage'
 
+
 function App() {
 
   return (
     <>
       <BrowserRouter>
-      <nav className='bg-gray-700 border-gray-200 dark:bg-gray-900 '>
-        <div className='max-w-screen-xl flex flex-wrap items-center justify-between mx-auto absolute inset-x-0 top-0'>
-          <a href="https://www.coca-cola.com.mx/" className='flex items-center'>
+      
+      <nav className='relative z-10'>
+        <div className='fixed w-full bg-sky-950 p-2 flex flex-wrap items-center justify-between mx-auto inset-x-0 top-0 '>
+          <a href="https://www.google.com" className='flex items-center'>
             <img className='h-20 mr-3' src="https://placehold.co/600x400" alt="" />
-            <span className='self-center text-2xl font-semibold text-red-500 hover:text-red-700'>Empresa</span>
+            <span className='self-center text-3xl font-semibold text-stone-50'>Empresa</span>
           </a>
-          <ul className='flex flex-row justify-start gap-4'>
+          <ul className='flex flex-row justify-start gap-4 text-xl text-stone-50 px-4'>
             <li>
-              <a href="#">Home</a>
+              <a className='hover:font-bold' href="#">Home</a>
             </li>
             <li>
-              <Link to="#about-page">About</Link>
+              <Link className='hover:font-bold' to="#about-page">About</Link>
             </li>
             <li>
-              <Link to="#contact-page">Contact</Link>
+              <Link className='hover:font-bold' to="#contact-page">Contact</Link>
             </li>
             
           </ul>
         </div>
       </nav>
-      <div className='container mx-auto p-10 flex flex-col'>
+      <div className='container mx-auto p-5 flex flex-col mt-10'>
         <ProductsPage></ProductsPage>
         <AboutPage></AboutPage>
         <ContactPage></ContactPage>
       </div>
-      <footer>
-        <div className='flex flex-row justify-center gap-4'>
-          <a href="https://www.facebook.com/CocaColaMX" className='flex items-center'>
-            <img className='h-20 mr-3' src="src/assets/facebook.png" alt="" />
-          </a>
-          <a href="https://twitter.com/CocaColaMx" className='flex items-center'>
-            <img className='h-20 mr-3' src="src/assets/twitter.png" alt="" />
-          </a>
-          <a href="https://www.instagram.com/cocacolamx/" className='flex items-center'>
-            <img className='h-20 mr-3' src="src/assets/instagram.png" alt="" />
-          </a>
-        </div>
-      </footer>
-    
     </BrowserRouter>
     </>
   )
