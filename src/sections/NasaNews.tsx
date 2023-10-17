@@ -5,7 +5,12 @@ import {BiSolidNews} from 'react-icons/bi';
 const NasaNews = () => {
     const newsImages = ['https://www.nasa.gov/wp-content/uploads/2023/10/53255487909-db987b77e4-k.jpg', 'https://www.nasa.gov/wp-content/uploads/2023/10/herc-24.jpg']
 
-    const otherNews = [
+    type news = {
+        time: number,
+        title: string,
+        img: string
+    }
+    const otherNews: news[] = [
         {time: 5, title: "NASA's Bennu Asteroid Sample Contains Carbon, Water", img: 'https://www.nasa.gov/wp-content/uploads/2023/10/nelson-tagsam-shot-b.jpg?resize=2000,1500'},
         {time: 4, title: "NASA Highlights Science on Next Northrop Grumman Mission to Space Station", img: 'https://www.nasa.gov/wp-content/uploads/2023/10/annular-eclipse-photo-bill-dunford.jpg'},
         {time: 3, title: "NASA Invites Media to Next SpaceX Cargo Launch to Space Station", img: 'https://www.nasa.gov/wp-content/uploads/2023/10/psyche-asteroid-advisory-oct-5.jpg?resize=2000,1600'},
@@ -50,7 +55,7 @@ const NasaNews = () => {
 
             </div>
             <div className='flex flex-row justify-center items-center p-4'>
-                {otherNews.map((news, index) => (
+                {otherNews.map((news, index: number) => (
                     <div key={index} className='flex flex-row items-center space-x-4'>
                         <img className='rounded-full h-20 w-20' src={news.img} alt="" />
                         <div className='flex flex-col justify-center'>
